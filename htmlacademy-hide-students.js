@@ -60,27 +60,27 @@
     students.forEach(function(student) {
       var hideBtn = student.querySelector(selHideBtn);
       var cbEnter = function() {
-        console.log('enter');
+        //console.log('enter');
         hideBtn.style.visibility = 'visible';
         student.removeEventListener('mouseenter', cbEnter);
         student.addEventListener('mouseleave', cbLeave);
         hideBtn.addEventListener('mouseenter', cbHideBtnEnter);
       };
       var cbLeave = function() {
-        console.log('leave');
+        //console.log('leave');
         hideBtn.style.visibility = 'hidden';
         student.removeEventListener('mouseleave', cbLeave);
         student.addEventListener('mouseenter', cbEnter);
       };
       var cbHideBtnEnter = function() {
-        console.log('hidebtn enter');
+        //console.log('hidebtn enter');
         hideBtn.style.visibility = 'visible';
         hideBtn.removeEventListener('mouseenter', cbHideBtnLeave);
         hideBtn.addEventListener('mouseleave', cbHideBtnLeave);
         student.removeEventListener('mouseenter', cbEnter);
       };
       var cbHideBtnLeave = function() {
-        console.log('hidebtn leave');
+        //console.log('hidebtn leave');
         hideBtn.style.visibility = 'hidden';
         hideBtn.addEventListener('mouseenter', cbHideBtnEnter);
         student.addEventListener('mouseenter', cbEnter);
